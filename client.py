@@ -9,55 +9,50 @@ def answer(socket):
 		current_data = socket.recv(4096)
 
 
-wikipedia_request = """GET /wiki/страница HTTP/1.1
-Host: ru.wikipedia.org
-User-Agent: Mozilla/5.0 (X11; U; Linux i686; ru; rv:1.9b5) Gecko/2008050509
-Firefox/3.0b5
-Accept: text/html
-Connection: close 
-
+wikipedia_request = """GET /wiki/Main_Page HTTP/1.1\r\n
+Host: en.wikipedia.org\r\n
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; ru; rv:1.9b5) Gecko/2008050509\r\n
+Firefox/3.0b5\r\n
+Accept: text/html\r\n
+Connection: close\r\n\r\n\r\n
 """
 
 htttpbin_requests = [
-"""GET /ip HTTP/1.1
-Host: httpbin.org
-Accept: */* 
-
-""",
-
-"""GET /get?foo=bar&1=2&2/0&error=True HTTP/1.1
-Host: httpbin.org
-Accept: */* 
-
-""",
-
-"""POST /post HTTP/1.1
-Host: httpbin.org
-Accept: */*
-Content-Length: 35
-Content-Type: application/x-www-form-urlencoded
+"""GET /ip HTTP/1.1\r\n
+Host: httpbin.org\r\n
+Accept: */*\r\n""",
  
-foo=bar&1=2&2%2F0=&error=True 
-
-""",
-
-"""GET /cookies/set?country=Ru HTTP/1.1
-Host: httpbin.org
-Accept: */* 
-
-""",
-
-"""GET /cookies HTTP/1.1
-Host: httpbin.org
-Accept: */* 
-
-""",
-
-"""GET /redirect/4 HTTP/1.1
-Host: httpbin.org
-Accept: */* 
-
+"""GET /get?foo=bar&1=2&2/0&error=True HTTP/1.1\r\n
+Host: httpbin.org\r\n
+Accept: */*\r\n""",
+ 
+"""POST /post HTTP/1.1\r\n
+Host: httpbin.org\r\n
+Accept: */*\r\n
+Content-Length: 35\r\n
+Content-Type: application/x-www-form-urlencoded\r\n
+\r\n
+\r\n
+\r\n
+foo=bar&1=2&2%2F0=&error=True\r\n
 """
+,
+"""GET /cookies/set?country=Ru HTTP/1.1\r\n
+Host: httpbin.org\r\n
+Accept: */*\r\n"""
+,
+ 
+"""GET /cookies HTTP/1.1\r\n
+Host: httpbin.org\r\n
+Accept: */*\r\n"""
+,
+"""GET /redirect/4 HTTP/1.1\r\n
+Host: httpbin.org\r\n
+Accept: */*\r\n"""
+
+"""GET /redirect/4 HTTP/1.1\r\n
+Host: httpbin.org\r\n
+Accept: */*\r\n"""
 ]
 
 
