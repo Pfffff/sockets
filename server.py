@@ -30,11 +30,11 @@ while True:
 			file = open ("./index.html", "rb")
 			conn.send("""HTTP/1.1 200 OK \n Content type:text HTML\n\n\n """ + file.read())
 			file.close()
-	elif address == "about/aboutme.html":
+	elif address == "/about/aboutme.html":
 		print("aboutme!")
-		if os.path.exists("./" + address):
+		if os.path.exists("." + address):
 			file = open ("." + address, "rb")
-			conn.send("""HTTP 200 OK \n Content type:text HTML\n\n\n """ + file.read())	
+			conn.send("""HTTP/1.1 200 OK \n Content type:text HTML\n\n\n """ + file.read())	
 			file.close()
 	conn.close()
 sock.close()
