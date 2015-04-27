@@ -6,7 +6,7 @@ WSGImiddlewire_bottom = "<div class='bottom'>Middleware BOTTOM</div>"
 
 class WSGIApp:
 	# class constructor
-	def __init__(self,app) 
+	def __init__(self,app):
 		self.app = app
 	
 	def __call__(self, environ, start_response):
