@@ -7,6 +7,7 @@ BOTTOM = "<div class='botton'>Middleware BOTTOM</div>"
 class WSGIApp(object):
 	def __init__(self, app):
 		self.app = app
+		
 	def __call__(self, environ, start_response):
 		response = self.app(environ, start_response)[0]
 		if response.find('<body>') >-1:
